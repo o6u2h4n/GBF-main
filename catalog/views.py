@@ -8,5 +8,6 @@ def product_list(request:HttpRequest):
         bu view tüm ürünleri getirir
     """
     products = Product.objects.filter(availability=True)
-    return render(request,'productlist.html',{'products':products})
+    categories = Category.objects.all()
+    return render(request,'productlist.html',{'products':products, 'categories':categories})
 
