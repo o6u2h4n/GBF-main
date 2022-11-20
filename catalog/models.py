@@ -35,3 +35,19 @@ class Product(models.Model):
     
     def __str__(self) -> str:
         return self.name
+
+
+class Toptext(models.Model):
+    name = models.CharField(max_length = 150, db_index = True)
+    slug = models.SlugField(max_length = 150, db_index = True,unique = True)
+    date = models.DateField(auto_now=True)
+
+
+    class Meta:
+        ordering = ("name",)
+        index_together = (('id','slug'),)
+        verbose_name = "Bildirim"
+        verbose_name_plural = "Bildirimler"
+
+    def __str__(self) -> str:
+        return self.name
