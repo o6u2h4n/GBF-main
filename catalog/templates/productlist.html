@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block title %} Ürünlerimiz {% endblock %}
+
 {% block content %}
 <div class="row d-flex justify-content-around" style="margin-bottom:30px;background-color:#3D3D3D;">
 
@@ -79,6 +80,38 @@
     {% endfor %}
 </div>
 {% endblock %}
+
+
+{% block topbar %}
+{% for i in toptext %}
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+{% endfor %}
+{% endblock %}
 <!--{% if product.image %}{{product.image.url}}
                           {% else %}{% static 'image/Noimage.jpg' %}   
                           {% endif %}-->
+
+
+
+                          <!-- <div style="display:flex;font-size:20px; color:darkred; font-family:Georgia, 'Times New Roman', Times, serif; justify-content:center; align-items: center;">
+                            </div> -->
