@@ -1,12 +1,72 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block title %} Ürünlerimiz {% endblock %}
+
 {% block content %}
+<div class="row d-flex justify-content-around" style="margin-bottom:30px;background-color:#3D3D3D;">
+
+    <div class="d-flex flex-row text-center">
+        {% for category in categories %}
+
+        <a href="#" class="iist-group-item list-group-item-action" style="border-radius:10px; color:#fffd  !important;"
+            onMouseover="this.style.color = 'black'" onMouseout="this.style.color ='white'">{{category.name}}</a>
+        {% endfor %}
+    </div>
+
+</div>
+<div>
+    <div style="display: flex;">
+        <img href="#" src="static/img1.JPeG" style="width:auto; height:auto; display: block; width: 100%;   object-fit: contain;">
+        <div>
+            <tr>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam excepturi qui
+                    voluptatum earum beatae ex laborum veritatis porro minima aliquam officiis repudiandae doloremque
+                    tempore ratione quis error, a ipsa.</h3>
+            </tr>
+            <tr>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio enim ea laborum veritatis.
+                    Minus, modi reprehenderit. Provident dolorem neque repellat soluta accusamus libero, nostrum esse
+                    deserunt praesentium in accusantium asperiores.</p>
+            </tr>
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div>
+            <tr>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam excepturi qui
+                    voluptatum earum beatae ex laborum veritatis porro minima aliquam officiis repudiandae doloremque
+                    tempore ratione quis error, a ipsa.</h3>
+            </tr>
+            <tr>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio enim ea laborum veritatis.
+                    Minus, modi reprehenderit. Provident dolorem neque repellat soluta accusamus libero, nostrum esse
+                    deserunt praesentium in accusantium asperiores.</p>
+            </tr>
+        </div>
+        <img href="#" src="static/img2.JPeG" style="resize:both">
+
+    </div>
+    <div style="display: flex;">
+        <img href="#" src="static/img3.JPeG">
+        <div>
+            <tr>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam excepturi qui
+                    voluptatum earum beatae ex laborum veritatis porro minima aliquam officiis repudiandae doloremque
+                    tempore ratione quis error, a ipsa.</h3>
+            </tr>
+            <tr>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio enim ea laborum veritatis.
+                    Minus, modi reprehenderit. Provident dolorem neque repellat soluta accusamus libero, nostrum esse
+                    deserunt praesentium in accusantium asperiores.</p>
+            </tr>
+        </div>
+    </div>
+</div>
 <div class="row">
     {% for product in products %}
     <div class="col-4">
         <div class="card col-sm-12 col-lg-12">
-                <img src="{% if product.image %}{{product.image.url}}
+            <img src="{% if product.image %}{{product.image.url}}
                           {% else %}{% static 'img/noim.jpg'%}   
                           {% endif %} " alt="{{product.name}}">
         </div>
@@ -20,6 +80,22 @@
     {% endfor %}
 </div>
 {% endblock %}
+
+
+{% block topbar %}
+{% for i in toptext %}
+<div class="carousel-item-active">  
+    <p>{{i.name}}</p>
+  </div>
+  
+
+{% endfor %}
+{% endblock %}
 <!--{% if product.image %}{{product.image.url}}
                           {% else %}{% static 'image/Noimage.jpg' %}   
                           {% endif %}-->
+
+
+
+                          <!-- <div style="display:flex;font-size:20px; color:darkred; font-family:Georgia, 'Times New Roman', Times, serif; justify-content:center; align-items: center;">
+                            </div> -->
