@@ -12,3 +12,11 @@ def product_list(request:HttpRequest):
     toptext = Toptext.objects.all()
     return render(request,'productlist.html',{'products':products, 'categories':categories, 'toptext':toptext })
 
+   
+
+def contact(request):
+    # Start Date & End Date
+     return render(request, 'contact.html')
+
+def main(request):
+    return render(request, 'main.html')
