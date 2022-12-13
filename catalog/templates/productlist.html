@@ -109,22 +109,22 @@
 {% block topbar %}
 
 
-<div id="myCarousel-2" class="carousel slide" data-ride="carousel"
-    style="width:80%; justify-content:center;background: none; align-content: center; height:auto;">
+<div id="myCarousel-2" class="carousel slide" data-ride="carousel-2"
+    style="width:80%; justify-content:center; align-content: center; height:auto;">
 
-    <div class="carousel-inner" stlye="margin: auto;align-items:center; justify-content:center">
+    <div class="carousel-inner" stlye="margin: auto;align-items:center;  justify-content:center">
 
         {% for i in toptext %}
 
         {% if forloop.first %}
-        <div class="carousel-item active" style="margin: auto; background:none;width:100%;justify-content:center">
+        <div class="carousel-item active" style="font-size:20px;margin: auto;width:100%;;background: none;justify-content:center; color: rgb(212, 179, 179);">
 
             <p style="display: flex;justify-content: center;">{{i.name}}</p>
 
         </div>
 
         {% else %}
-        <div class="carousel-item" style="width:100%;justify-content:center; ">
+        <div class="carousel-item" style="width:100%;justify-content:center;background: none; color: rgb(212, 179, 179) ">
             <p style="display: flex;justify-content: center;">{{i.name}}</p>
 
 
