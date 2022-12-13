@@ -35,6 +35,12 @@
       height: 400px;
     }
 
+    #footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%
+    }
+
 
     .carousel-item {
       color: white;
@@ -244,6 +250,16 @@
         <a href="#twitter"><i class="fa-brands fa-twitter"></i></a>
       </div>
     </div>
+    <div class="header2"
+      style="padding:10px; background-color:#090708; display:flex; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; justify-content:space-between; align-items: center;">
+      <a href="#default"></a>
+      <a href="#default" class="logo"><img src="static/gb.JPG" style="margin-left: 300px;"></a>
+      <div style="display:flex-end; align-items:flex-end;">
+        <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#fff"></i><a><input type="text"
+            placeholder="Ara.." style="width: 300px; border-radius: 14px;"></a>
+      </div>
+
+    </div>
     <hr style="height: 1px; margin: 0px;padding: 0px;opacity: 100%;background-color: black;color: black;border: none;">
     <div style="width:80%; margin-left:10%;justify-content: center; justify-items: center;">
       <h1>Bizimle İletişime Geçin</h1>
@@ -260,21 +276,72 @@
       <h2>Bizi Ziyaret Edin</h2>
       <p>Our perfume shop is located at Karabaş, Hafiz Selim Efendi Sk. 1, 41040 İzmit/Kocaeli. Here is a map showing
         our location:</p>
-      <div id="map"></div>
+      <div id="map" style="margin-bottom:10px"></div>
     </div>
+    <div id="footer">
+      <div>
+        <hr
+          style="height: 1px; margin: 0px;padding: 0px;opacity: 100%;background-color: black;color: black;border: none;">
+      </div>
+      <div
+        style="padding-bottom: 12px; display:flex; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; justify-content:center; align-items: top;">
+        <a href="#default" class="logo"><img src="static/gb.JPG"></a>
+      </div>
+      <div>
+        <hr
+          style="height: 1px; margin: 0px;padding: 0px;opacity: 100%;background-color: black;color: black;border: none;">
+      </div>
+      <div class="row row-cols-2 row-cols-lg-3" style="width:90vw; margin-left: 5vw;display:flex; text-align: center;">
+        <div>
+          <div class="col"><a href="#about">HAKKIMIZDA</a></div>
+          <div class="col"><a href="#about" style="color:#090708">Ödeme ve Teslimat</a> </div>
+          <div class="col"><a href="#about" style="color:#090708">İletişim</a></div>
+        </div>
+
+        <div>
+          <div class="col"><a href="#about">BİZİ TAKİP EDİN</a>></div>
+          <div class="col"><a href="#instagram"><i class="fa-brands fa-instagram" style="color:#090708"></i></a>
+            <a href="#twitter"><i class="fa-brands fa-twitter" style="color:#090708"></i></a>
+            <a href="#facebook"><i class="fa-brands fa-facebook" style="color:#090708"></i></a>
+            <a href="#youtube"><i class="fa-brands fa-youtube" style="color:#090708"></i></a>
+          </div>
+          <div class="col"><a href="#maker" style="color:#090708">GB Frangrances LTD ŞTİ</a></div>
+        </div>
+        <div>
+          <div class="col"><a href="#about">WhatsApp Listemize Katılın</a></div>
+
+
+          <div class="row">
+            <div class="col">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, suscipit autem? Repellat vero earum
+                deserunt incidunt minus maxime doloremque qui ea fugiat quaerat quis, laborum id quo velit dicta
+                aliquid! lorem</p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <p style="margin-top: 20px;margin-bottom:0px;font-size: xx-small;">All rights reserved 2022 Kocaeli/Turkey </p>
+      </div>
+    </div>
+
   </div>
+
 </body>
-          <script>
-      // Initialize the map
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: { lat: 40.45, lng: 29.56 },
-          zoom: 13
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<script>
+  // Initialize the map
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 40.45, lng: 29.56 },
+      zoom: 13
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 
 </html>
