@@ -43,12 +43,6 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel"
     style="width:80%; justify-content:center; align-content: center;">
 
-    <!-- <ol>
-            <li data-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-            {% for category in categories %}
-            <li data-target="#myCarousel" data-bs-slide-to="5"></li>
-            {% endfor %}
-        </ol> -->
     <div class="carousel-inner" stlye="align-items:center; justify-content:center">
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,69 +75,31 @@
             {% else %}
             <div class="carousel-item" style="width:100%;justify-content:center; ">
                 <div class="container" style="justify-content:center; ">
-                <div class="card col-sm-12 col-lg-12" style="width:18rem; background-color:none; border-color: None; ; margin:auto">
-                    <img src="{% if product.image %}{{product.image.url}}
+                    <div class="card col-sm-12 col-lg-12"
+                        style="width:18rem; background-color:none; border-color: None; ; margin:auto">
+                        <img src="{% if product.image %}{{product.image.url}}
                                   {% else %}{% static 'img/noim.jpg'%}   
                                   {% endif %}" class="img-fluid" alt="{{product.name}}">
+                    </div>
+                    <div class="card-body" style="margin-left:10%;">
+                        <h3 class="card-title">{{product.name}}</h3>
+                        <hr>
+                        <p class="card-text">{{product.description}}</p>
+                        <p class="card-text">{{product.price}} TL</p>
+                    </div>
                 </div>
-                <div class="card-body" style="margin-left:10%;">
-                    <h3 class="card-title">{{product.name}}</h3>
-                    <hr>
-                    <p class="card-text">{{product.description}}</p>
-                    <p class="card-text">{{product.price}} TL</p>
-                </div>
+
+                {% endif %}
             </div>
 
-            {% endif %}
+
+            {% endfor%}
+
         </div>
 
 
-        {% endfor%}
 
     </div>
-
-
-
-    <!-- {% for product in products|slice:":1" %}
-        {% if forloop.first %}
-        <div class="carousel-item active" style="display:flex; width:auto;justify-content:center">
-            <div class="container">
-                <div class="card col-sm-12 col-lg-12" style="width:18rem; background-color: green; border-color: None;">
-                    <img src="{% if product.image %}{{product.image.url}}
-                          {% else %}{% static 'img/noim.jpg'%}   
-                          {% endif %}" class="img-fluid" alt="{{product.name}}">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">{{product.name}}</h3>
-                    <hr>
-                    <p class="card-text">{{product.description}}</p>
-                    <p class="card-text">{{product.price}} TL</p>
-                </div>
-            </div>
-        </div>
-        {% else %}
-
-        <div class="carousel-item" styyle="display:flex; width:auto;justify-content:center">
-            <div class="container">
-                <div class="card col-sm-12 col-lg-12" style="width:18rem; background-color: red; border-color: None;">
-                    <img src="{% if product.image %}{{product.image.url}}
-                          {% else %}{% static 'img/noim.jpg'%}   
-                          {% endif %}" class="img-fluid" alt="{{product.name}}">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">{{product.name}}</h3>
-                    <hr>
-                    <p class="card-text">{{product.description}}</p>
-                    <p class="card-text">{{product.price}} TL</p>
-                </div>
-            </div>
-            {% endif %}
-
-      
-        </div>
-        {% endfor %} -->
-
-</div>
 
 </div>
 
@@ -151,20 +107,41 @@
 
 
 {% block topbar %}
-{% for i in toptext %}
-<div class="carousel-item-active">
-    <p>{{i.name}}</p>
+
+
+<div id="myCarousel-2" class="carousel slide" data-ride="carousel-2"
+    style="width:80%; justify-content:center; align-content: center; height:auto;">
+
+    <div class="carousel-inner" stlye="margin: auto;align-items:center;  justify-content:center">
+
+        {% for i in toptext %}
+
+        {% if forloop.first %}
+        <div class="carousel-item active" style="font-size:20px;margin: auto;width:100%;;background: none;justify-content:center; color: rgb(212, 179, 179);">
+
+            <p style="display: flex;justify-content: center;">{{i.name}}</p>
+
+        </div>
+
+        {% else %}
+        <div class="carousel-item" style="width:100%;justify-content:center;background: none; color: rgb(212, 179, 179) ">
+            <p style="display: flex;justify-content: center;">{{i.name}}</p>
+
+
+        </div>
+
+        {% endif %}
+    </div>
+
+
+    {% endfor%}
+
 </div>
 
 
 
-{% endfor %}
+</div>
+
+</div>
+
 {% endblock %}
-<!--{% if product.image %}{{product.image.url}}
-                          {% else %}{% static 'image/Noimage.jpg' %}   
-                          {% endif %}-->
-
-
-
-<!-- <div style="display:flex;font-size:20px; color:darkred; font-family:Georgia, 'Times New Roman', Times, serif; justify-content:center; align-items: center;">
-                            </div> -->
