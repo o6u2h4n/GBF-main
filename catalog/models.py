@@ -51,3 +51,13 @@ class Toptext(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Comment(models.Model):
+    products = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
+    email = models.EmailField()
+    body = models.TextField()
+    active = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return f'{self.email} tarafından {self.product} ürüne yapılan yorum: {self.body}'

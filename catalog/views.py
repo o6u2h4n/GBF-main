@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest
-from .models import Product, Category, Toptext
+from .models import Product, Category, Toptext, Comment
 
 # Create your views here.
 def product_list(request:HttpRequest):
@@ -34,3 +34,9 @@ def products(request):
     categories = Category.objects.all()
     toptext = Toptext.objects.all()
     return render(request, 'products.html',{'products':products, 'categories':categories, 'toptext':toptext })
+
+def comments(request):  
+    products = Product.objects.filter(availability=True)
+    body = Comment.objects.all()
+    email = Comment.email.all()
+    return render(request, 'comments.html',{'products':products, 'comments':body, 'email':email })
