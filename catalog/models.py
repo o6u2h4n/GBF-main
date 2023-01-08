@@ -55,6 +55,7 @@ class Toptext(models.Model):
 
 class Comment(models.Model):
     products = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
+    user = models.TextField(default='Anonymous')
     email = models.EmailField()
     body = models.TextField()
     active = models.BooleanField(default=False)
