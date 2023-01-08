@@ -37,6 +37,7 @@ def products(request):
 
 def comments(request):  
     products = Product.objects.filter(availability=True)
+    user = Comment.user
     body = Comment.objects.all()
-    email = Comment.email.all()
+    email = Comment.email
     return render(request, 'comments.html',{'products':products, 'comments':body, 'email':email })
