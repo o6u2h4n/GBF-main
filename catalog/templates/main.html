@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -227,27 +226,25 @@
 
 <body id="gradient">
 
-  <div>
-    <div class="header"
-      style="display:flex; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; justify-content:center; align-items: center;">
 
       {% block topbar %}
       {% endblock %}
-
-
+      {% include 'header.html' %}
+      {% block header %}
+      {% endblock %}
+<!--  header.html e taşındı
     </div>
     <hr style="height: 1px; margin: 0px;padding: 0px;opacity: 100%;background-color: black;color: black;border: none;">
     <div class="header"
       style="display:flex; font-family:Georgia, 'Times New Roman', Times, serif; justify-content:space-around; align-items: center;">
       <div class="header-right" styşe="font-family: Forteast-Demo;">
-        <a href="main" target="_blank">ANASAYFA</a>
-        <a href="#perfumes">PARFÜMLER</a>
-        <!-- <a href="#brands">MARKALAR</a> -->
+        <a href="main">ANASAYFA</a>
+        <a href="products">PARFÜMLER</a>
         <a href="about">HAKKIMIZDA</a>
-        <a href="#comments">YORUMLAR</a>
+         <a href="#comments">YORUMLAR</a>
         <a href="contact">İLETİŞİM</a>
 
-        <a href="https://www.instagram.com/gbfragrances.tr/">
+        <a href="https://www.instagram.com/gbfragrances.tr/" target="_blank">
           <i class="fa-brands fa-instagram"></i></a>
         <a href="#twitter"><i class="fa-brands fa-twitter"></i></a>
       </div>
@@ -261,9 +258,11 @@
       <div style="display:flex-end; align-items:flex-end;">
         <i class="fa-sharp fa-solid fa-magnifying-glass" style="color:#fff"></i><a><input type="text"
             placeholder="Ara.." style="width: 300px; border-radius: 14px;"></a>
-      </div>
+      </div> -->
 
-    </div>
+
+
+
     {% comment %} <div style="padding-bottom:30px"></div> {% endcomment %}
 
     <div class="container" stlye="display:flex; ">
@@ -328,7 +327,7 @@
 
 
     </div>
-    <div id="footer">
+    <!-- <div id="footer">
       <div>
         <hr
           style="height: 1px; margin: 0px;padding: 0px;opacity: 100%;background-color: black;color: black;border: none;">
@@ -376,7 +375,10 @@
       <div style="display: flex; justify-content: center; align-items: center;">
         <p style="margin-top: 20px;margin-bottom:0px;font-size: xx-small;">All rights reserved 2022 Kocaeli/Turkey </p>
       </div>
-    </div>
+    </div> -->
+    {% include 'footer.html' %}
+    {% block footer %}
+    {% endblock %}
   </div>
 </body>
 <script type="module">
@@ -428,7 +430,5 @@
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
 
 </html>

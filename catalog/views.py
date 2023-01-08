@@ -28,3 +28,9 @@ def main(request):
     categories = Category.objects.all()
     toptext = Toptext.objects.all()
     return render(request, 'productlist.html',{'products':products, 'categories':categories, 'toptext':toptext })
+
+def products(request):  
+    products = Product.objects.filter(availability=True)
+    categories = Category.objects.all()
+    toptext = Toptext.objects.all()
+    return render(request, 'products.html',{'products':products, 'categories':categories, 'toptext':toptext })
