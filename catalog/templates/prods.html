@@ -1,0 +1,43 @@
+
+{% load static %}
+
+{% include 'header.html' %}
+{% block header %}
+{% endblock %}
+{% block prod %}
+<div class="row">
+    <div class="col-3">
+        
+        <div class="list-group">
+            <a href="/" class="list-group-item list-group-item-action " aria-current="true"> Tüm Ürünler</a>
+            {% for category in categories %}
+            <a href="productsByCategoryId?id={{category.id}}" class="list-group-item list-group-item-action active" aria-current="true"> {{category.name}}</a>
+                {% endfor %}
+            </a>
+
+          </div>
+    </div>
+    <div class="col-9">
+        <div class="row">
+        {% for product in products %}
+            <div class="col-3">
+                <div class="card">
+                    <img src="{% if product.image %} 
+                    {{product.image.url}} 
+                    {% else %} 
+                    {% static "noim.jpg" %} 
+                    {% endif %}" alt="{{product.name}}">           
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <hr>
+                        <p class="card-text">{{product.description}}</p>
+                        <p class="card-text">{{product.price}} TL </p>
+                        <a href="showDetail?id={{product.id}}">Ayrıntıları Göster</a>
+                    </div>     
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
