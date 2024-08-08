@@ -5,13 +5,13 @@
 {% block title %} Ürünlerimiz {% endblock %}
 
 {% block content %}
-<div class="row d-flex justify-content-around" style="margin-bottom:30px;background-color:#3D3D3D;">
+<div class="row d-flex justify-content-around" style="margin-bottom:30px;">
 
     <div class="d-flex flex-row text-center">
         {% for category in categories %}
 
-        <a href="#" class="iist-group-item list-group-item-action" style="border-radius:10px; color:#fffd  !important;"
-            onMouseover="this.style.color = 'black'" onMouseout="this.style.color ='white'">{{category.name}}</a>
+        <a href="" class="iist-group-item list-group-item-action" style="border-radius:10px; color:black  !important;"
+            onMouseover="this.style.color = 'darkblue'" onMouseout="this.style.color ='black'">{{category.name}}</a>
         {% endfor %}
     </div>
 
@@ -43,7 +43,7 @@
 
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel"
-    style="width:80%; justify-content:center; align-content: center;">
+    style="display:flex;width:100%; justify-content:center; align-content: center;">
 
     <div class="carousel-inner" stlye="align-items:center; justify-content:center">
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -108,7 +108,7 @@
 {% endblock %}
 
 
-{% block topbar %}
+<!-- {% block topbar %}
 
 
 <div id="myCarousel-2" class="carousel slide" data-ride="carousel-2"
@@ -146,7 +146,7 @@
 
 </div>
 
-{% endblock %}
+{% endblock %} -->
 
 {% block prod %}
 <div class="row">

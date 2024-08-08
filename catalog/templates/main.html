@@ -22,16 +22,30 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
+
+  .caroousel {
+    width:100%
+  }
+
+
   .carousel-item {
     /* height: 32rem; */
-    background: linear-gradient(darkgray,rgba(172, 210, 224, 0.8));
+    background: linear-gradient(rgba(202, 202, 202, 0.9),rgba(196, 196, 196, 0.8));
     color: white;
+    min-width: 100%;
     /* border-radius: 100px;
     border-style: solid;
     border-color:lightblue; */
 
     /* position: relative; */
   }
+
+  body {
+  /* background-image:  url("static/chemback.png"); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size : cover;
+}
 
   @font-face {
     font-family: 'Italianno-Regular';
@@ -44,9 +58,9 @@
     width: 100%
   }
 
-  #gradient {
-    background-image: linear-gradient(#656658, #cccc);
-  }
+  /* #gradient {
+    background-image: linear-gradient(white, lightgray);
+  } */
 
   .header a input[type=text] {
     float: right;
@@ -76,7 +90,7 @@
   }
 
   /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
 
     .header a,
     .header input[type=text] {
@@ -97,14 +111,13 @@
 
   .header {
     overflow: auto;
-    background-color: #6D6E61;
     padding: 10px 10px;
   }
 
   /* Style the header links */
   .header a {
     float: left;
-    color: white;
+    color: black;
     text-align: center;
     padding: 10px;
     text-decoration: none;
@@ -121,14 +134,14 @@
 
   /* Change the background color on mouse-over */
   .header a:hover {
-    background-color: #ddd;
+    background-color: #96e6be;
     color: black;
   }
 
   /* Style the active/current link*/
   .header a.active {
     background-color: dodgerblue;
-    color: white;
+    color: black;
   }
 
   /* Float the link section to the right */
@@ -139,7 +152,7 @@
   /* Navigation links */
   .navbar a {
     float: left;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -166,7 +179,7 @@
   /* Add a red background color to navigation links on hover */
   .navbar a:hover,
   .subnav:hover .subnavbtn {
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     color: black
   }
 
@@ -176,7 +189,7 @@
     position: absolute;
     padding: 30px;
     left: 0;
-    background-color: #ddd;
+    /* background-color: #ddd; */
     color: black;
     width: 100%;
     z-index: 1;
@@ -185,7 +198,7 @@
   /* Style the subnav links */
   .subnav-content a {
     float: left;
-    color: #cccccc;
+    color: black;
     text-decoration: none;
     font-size: 26px;
     justify-content: space-between;
@@ -194,7 +207,7 @@
 
   /* Add a grey background color on hover */
   .subnav-content a:hover {
-    background-color: #cccccc;
+    background-color: darkgray;
     color: black;
     font-weight: bold;
   }
@@ -221,14 +234,16 @@
     .header-right {
       float: none;
     }
+
+
   }
 </style>
 
 <body id="gradient">
 
 
-      {% block topbar %}
-      {% endblock %}
+      <!-- {% block topbar %}
+      {% endblock %} -->
       {% include 'header.html' %}
       {% block header %}
       {% endblock %}
@@ -237,43 +252,53 @@
 
     {% comment %} <div style="padding-bottom:30px"></div> {% endcomment %}
 
-    <div class="container" stlye="display:flex; ">
 
       {% block content %}
 
       {% endblock %}
-      <div style="display: flex; margin:20px">
+      {% block content3 %}
+
+      {% endblock %}
+      <div style="display: flex;background-image: url(static/chemback.png); background-size:cover ">
         <img href="#" src="static/img1.jpeg"
           style="width:auto; height:auto; display: block; width: 100%;   object-fit: contain;margin:20px">
         <div>
           <tr>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam excepturi qui
-              voluptatum earum beatae ex laborum veritatis porro minima aliquam officiis repudiandae doloremque
-              tempore ratione quis error, a ipsa.</h3>
+            <h3>SOLTEK Kimya Üretim A.Ş., İzmit'teki fabrikamızda endüstriyel bakım koruma kimyasalları ve genel 
+              temizlik ürünleri üretiyoruz. Kendi Ar-Ge ve laboratuvarımız sayesinde, yurt dışından tedarik edilen 
+              kimyasalları analiz edip birebir muadillerini üretiyoruz. Ayrıca, </h3>
           </tr>
           <tr>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio enim ea laborum veritatis.
-              Minus, modi reprehenderit. Provident dolorem neque repellat soluta accusamus libero, nostrum esse
-              deserunt praesentium in accusantium asperiores.</p>
+            <p>Firmaların üretim süreçlerini analiz 
+              ederek özel kimyasal çözümler geliştiriyoruz. Bu çalışmalarıyla ülke ekonomisine katkı sağlayarak milli 
+              sermayenin yurt dışına çıkmasını engelliyoruz. Ürün yelpazemiz 365 farklı çeşitte su bazlı, solvent bazlı, 
+              alkali, asidik, jel ve sıvı formda ürün içeriyor. SOLTEK Kimya Üretim A.Ş. olarak kimyanın ötesinde bir 
+              çözüm sunarak geleceği şekillendiren bir güç olarak varız. SOLTEK Kimya Üretim A. Ş.’nin Ar-Ge ve laboratuvarı kendi bünyesinde olduğundan dolayı yurt içi özellikle yurt dışından tedarik ettiğiniz kimyasalların 
+              tersine mühendislik metodu ile analizlerini yapıyoruz. Analizi yapılan kimyasalların bire bir muadillerini üreterek üretim prosesinize dahil ediyoruz. 
+              Tersine mühendislik faaliyetlerimiz ile ülke ekonomisine katkıda bulunarak yurt dışına çıkan milli sermayemizin Ülkemizde kalmasını sağlıyoruz.</p>
           </tr>
         </div>
       </div>
-      <div style="display: flex;">
+      <div style="display: flex;background: linear-gradient(rgba(202, 202, 202, 0.9),rgba(196, 196, 196, 0.8))" >
         <div>
           <tr>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam excepturi qui
-              voluptatum earum beatae ex laborum veritatis porro minima aliquam officiis repudiandae doloremque
-              tempore ratione quis error, a ipsa.</h3>
+            <h3>SOLTEK Kimya Üretim A.Ş., İzmit'teki fabrikamızda endüstriyel bakım koruma kimyasalları ve genel 
+              temizlik ürünleri üretiyoruz. Kendi Ar-Ge ve laboratuvarımız sayesinde, yurt dışından tedarik edilen 
+              kimyasalları analiz edip birebir muadillerini üretiyoruz. Ayrıca, firmaların üretim süreçlerini analiz 
+              ederek özel kimyasal çözümler geliştiriyoruz. Bu çalışmalarıyla ülke ekonomisine katkı sağlayarak milli 
+              sermayenin yurt dışına çıkmasını engelliyoruz. Ürün yelpazemiz 365 farklı çeşitte su bazlı, solvent bazlı, 
+              alkali, asidik, jel ve sıvı formda ürün içeriyor. SOLTEK Kimya Üretim A.Ş. olarak kimyanın ötesinde bir 
+              çözüm sunarak geleceği şekillendiren bir güç olarak varız.</h3>
           </tr>
           <tr>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio enim ea laborum veritatis.
-              Minus, modi reprehenderit. Provident dolorem neque repellat soluta accusamus libero, nostrum esse
-              deserunt praesentium in accusantium asperiores.</p>
+            <p>OLTEK Kimya Üretim A. Ş.’nin Ar-Ge ve laboratuvarı kendi bünyesinde olduğundan dolayı yurt içi özellikle yurt dışından tedarik ettiğiniz kimyasalların 
+              tersine mühendislik metodu ile analizlerini yapıyoruz. Analizi yapılan kimyasalların bire bir muadillerini üreterek üretim prosesinize dahil ediyoruz. 
+              Tersine mühendislik faaliyetlerimiz ile ülke ekonomisine katkıda bulunarak yurt dışına çıkan milli sermayemizin Ülkemizde kalmasını sağlıyoruz.</p>
           </tr>
         </div>
         <img href="#" src="static/img2.jpeg" style="resize:both;margin:20px">
 
-      </div>
+      <!-- </div>
       <div style="display: flex; margin:20px">
         <img href="#" src="static/img3.jpeg" style="resize:both;margin:20px">
         <div>
@@ -288,14 +313,12 @@
               deserunt praesentium in accusantium asperiores.</p>
           </tr>
         </div>
-      </div>
+      </div> -->
       <!-- {% block content2 %}
 
       {% endblock %} -->
 
-      {% block content3 %}
 
-      {% endblock %}
 
 
     </div>
@@ -303,7 +326,7 @@
     {% include 'footer.html' %}
     {% block footer %}
     {% endblock %}
-  </div>
+
 </body>
 <script type="module">
   // Import the functions you need from the SDKs you need
